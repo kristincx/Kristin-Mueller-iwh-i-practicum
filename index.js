@@ -21,9 +21,15 @@ app.get("/", async (req, res) => {
 
 // * Code for Route 2 goes here
 // * Code for Route 2 goes here
-app.get("/update-cobj", (req, res) => {
-    res.render("updates");
-})
+app.get("/", async (req, res) => {
+    const cocktailData = await axios.get("https://api.hubapi.com/crm/v3/objects/${cocktailObjectId}?properties=name,strength,difficulty", {
+        headers: {
+            Authorization: `Bearer ${PRIVATE_APP_ACCESS}`
+        }
+    });
+
+    res.render("homepage", {cocktailInfo: cocktailData.data["results"]});
+});
 // TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
 
 // * Code for Route 3 goes here
