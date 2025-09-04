@@ -4,3 +4,18 @@ html
         title Update Custom Object Form | Integrating With HubSpot I Practicum
     body
         h1 Create new cocktail object
+
+            form(action="/update-cobj" method="POST")
+                div
+                    label(for="name") Name:
+                    input(type="text" name="name" id="name" required)
+
+                div
+                    label(for="strength") strength:
+                    input(type="text" name="strength" id="strength" required)
+
+                div
+                    label(for="difficulty") difficulty:
+                    input(type="text" name="difficulty" id="difficulty" required)
+                div
+                    button(type="submit") Submit
