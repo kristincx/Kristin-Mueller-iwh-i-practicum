@@ -4,3 +4,16 @@ html
         title Homepage
     body
         h1 Homepage
+        h1 Homepage
+        table
+            thead
+                tr
+                    th Name
+                    th Strength
+                    th Difficulty
+            tbody
+                each cocktail in cocktailInfo
+                    tr
+                        td #{cocktail.properties.name}
+                        td #{cocktail.properties.strength}
+                        td #{cocktail.properties.difficulty}
